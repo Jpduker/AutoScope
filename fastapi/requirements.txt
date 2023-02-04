@@ -1,0 +1,9 @@
+fastapi 
+torch
+uvicorn
+requests
+torchvision
+torchaudio
+twilio
+wikipedia
+Pillow
