@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+* {
+  font-family: 'Sarabun', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background: linear-gradient(45deg,green,greenyellow);
+}
