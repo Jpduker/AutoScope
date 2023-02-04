@@ -111,6 +111,19 @@ async def create_upload_file(file: UploadFile):
         "non-defect": prediction[1]
     }
 
- 
+@app.post("/twilio")
+async def twilio(defect: str , nondefect: str ,mobile : str): 
+    print(defect , nondefect, mobile) 
+    account_sid = "*****"
+    auth_token = "*****"
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(
+    body="The defective percentage of car is "+defect + "\n The non-defective percentage of car is "+nondefect,
+    from_='*****',
+    to='+91'+mobile
+    )
+    print(message.sid)
+    return {"message": "Message sent successfully"}
+
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0', port=8000)
